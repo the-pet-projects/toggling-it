@@ -1,0 +1,158 @@
+#%RAML 1.0
+title: feature-toggle-api
+version: v1
+baseUri: http://api.feature-toggle.com
+types:
+  TestType:
+    type: object
+    properties:
+      id: number
+      optional?: string
+      expanded:
+        type: object
+        properties:
+          count: number
+/applications:
+  description:
+  get:
+    description:
+    responses:
+      200:
+      500:
+  /{id}:
+    description:
+    get:
+      description:
+      responses:
+        200:
+        400:
+        403:
+        404:
+        500:
+    /toggles:
+     description:
+     get:
+      description:
+      responses:
+        200:
+        400:
+        403:
+        404:
+        500:
+      queryParameters:
+/queue/{id}:
+  get:
+    description:
+    responses:
+      200:
+        description:
+        body:
+          application/json:
+            example: |
+              {
+                status: "In progress"
+              }
+      303:
+        description: The 303 code implies that there is another resource that must be fetched instead of this resource.
+        body:
+          application/json:
+            example: |
+              {
+                location: "/toggles/1"
+              }
+/toggles:
+  description:
+  post:
+    description: The location URI points to a (created) resource that will display the status of the asynchronous processing.
+    responses:
+      202:
+        body:
+          application/json:
+            example: |
+              {
+                location: "/toggles/1"
+              }
+      400:
+        body:
+         application/json:
+           example: |
+             {
+               "errorCode": 400,
+               "message": "Bad Request."
+             }
+      422:
+        body:
+         application/json:
+           example: |
+             {
+               "errorCode": 422,
+               "message": "The entity is invalid."
+             }
+  get:
+    description:
+    responses:
+      200:
+      400:
+        body:
+         application/json:
+           example: |
+             {
+               "errorCode": 400,
+               "message": "Bad Request."
+             }
+      404:
+        body:
+         application/json:
+           example: |
+             {
+               "errorCode": 404,
+               "message": "Entity Not Found."
+             }
+      500:
+        body:
+         application/json:
+           example: |
+             {
+               "errorCode": 500,
+               "message": "Internal Server Error."
+             }
+    queryParameters:
+  /{id}:
+    description:
+    get:
+      description:
+      responses:
+        200:
+        400:
+        403:
+        404:
+        500:
+      queryParameters:
+    delete:
+      description:
+      responses:
+    patch:
+      description:
+      responses:
+    /applications:
+      description:
+      get:
+        description:
+        responses:
+          200:
+          400:
+          403:
+          404:
+          500:
+        queryParameters:
+  /{tag}:
+    description:
+    get:
+      description:
+      responses:
+        200:
+        400:
+        403:
+        404:
+        500:
+      queryParameters:
