@@ -12,13 +12,50 @@ types:
         type: object
         properties:
           count: number
-/applications:
-  description:
+/toggle-goups:
+  description: Create and define a group that a toggle may belong.
+  post:
+    description: Create a toggle-group
+    body:
+      application/json:
+        example: |
+          {
+            "name": "UI",
+            "description": "Group for UI toggles",
+            "tags": ["UI", "buttons", "views", "frameworks", "js"]
+          }
   get:
     description:
     responses:
       200:
+        description: Return all toggle groups with respective descriptions
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  "id": "5908a2e017293d1ae07322ed"
+                  "name": "UI",
+                  "description": "Group for UI toggles",
+                  "tags": ["UI", "buttons", "views", "frameworks", "js"],
+                  "created": "2017-05-06"
+                },
+                {
+                  "id": "5908a2e017293d1ae03232ed"
+                  "name": "Feature",
+                  "description": "Group for Feature toggles",
+                  "tags": ["Feature", "application", "functionality"],
+                  "created": "2017-05-06"
+                }
+              ]
       500:
+        body:
+         application/json:
+           example: |
+             {
+               "errorCode": 500,
+               "message": "Internal Server Error."
+             }
   /{id}:
     description:
     get:
@@ -40,6 +77,30 @@ types:
         404:
         500:
       queryParameters:
+        date:
+          displayName: date
+          type: string
+          description: filter toggles by date
+          example: 2017-05-05
+          required: false
+        tag:
+          displayName: tag
+          type: string
+          description: filter toggles by tag
+          required: false
+          example: buttons
+        name:
+          displayName: name
+          type: string
+          description: filter toggles by name
+          required: false
+          example: EnableRedButtons
+        id:
+          displayName: id
+          type: string
+          description: filter toggles by id
+          required: false
+          example: 5908a2e017293d1ae07322ed
 /queue/{id}:
   get:
     description:
@@ -92,6 +153,17 @@ types:
     description:
     responses:
       200:
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  "EnableRedButtons": true
+                },
+                {
+                  "EnableKafkaProducer": false
+                }
+              ]
       400:
         body:
          application/json:
@@ -134,7 +206,7 @@ types:
     patch:
       description:
       responses:
-    /applications:
+    /toggle-groups:
       description:
       get:
         description:
