@@ -25,7 +25,7 @@ types:
             "tags": ["UI", "buttons", "views", "frameworks", "js"]
           }
   get:
-    description:
+    description: Get all toggle-groups available with their information
     responses:
       200:
         description: Return all toggle groups with respective descriptions
@@ -49,6 +49,7 @@ types:
                 }
               ]
       500:
+        description: An error ocurred on the server.
         body:
          application/json:
            example: |
@@ -57,25 +58,78 @@ types:
                "message": "Internal Server Error."
              }
   /{id}:
-    description:
+    description: Endpoints for specific toggle-group
     get:
-      description:
+      description: Return toggle-group by id
       responses:
         200:
+          body:
+            application/json:
+              example: |
+                  {
+                    "id": "5908a2e017293d1ae07322ed"
+                    "name": "UI",
+                    "description": "Group for UI toggles",
+                    "tags": ["UI", "buttons", "views", "frameworks", "js"],
+                    "created": "2017-05-06"
+                  }
         400:
-        403:
+          body:
+           application/json:
+             example: |
+               {
+                 "errorCode": 400,
+                 "message": "Bad Request."
+               }
         404:
+          body:
+           application/json:
+             example: |
+               {
+                 "errorCode": 404,
+                 "message": "Entity Not Found. Id: 5908a2e017293d1ae07322ed."
+               }
         500:
+          body:
+           application/json:
+             example: |
+               {
+                 "errorCode": 500,
+                 "message": "Internal Server Error."
+               }
     /toggles:
      description:
      get:
       description:
       responses:
         200:
+          body:
+            application/json:
+              example: |
+                [
+                  {
+                    "EnableRedButtons": true
+                  },
+                  {
+                    "EnableKafkaProducer": false
+                  }
+                ]
         400:
-        403:
-        404:
+          body:
+           application/json:
+             example: |
+               {
+                 "errorCode": 400,
+                 "message": "Bad Request."
+               }
         500:
+          body:
+           application/json:
+             example: |
+               {
+                 "errorCode": 500,
+                 "message": "Internal Server Error."
+               }
       queryParameters:
         date:
           displayName: date
@@ -101,26 +155,6 @@ types:
           description: filter toggles by id
           required: false
           example: 5908a2e017293d1ae07322ed
-/queue/{id}:
-  get:
-    description:
-    responses:
-      200:
-        description:
-        body:
-          application/json:
-            example: |
-              {
-                status: "In progress"
-              }
-      303:
-        description: The 303 code implies that there is another resource that must be fetched instead of this resource.
-        body:
-          application/json:
-            example: |
-              {
-                location: "/toggles/1"
-              }
 /toggles:
   description:
   post:
@@ -150,7 +184,7 @@ types:
                "message": "The entity is invalid."
              }
   get:
-    description:
+    description: Return all toggle resources available
     responses:
       200:
         body:
@@ -196,7 +230,6 @@ types:
       responses:
         200:
         400:
-        403:
         404:
         500:
       queryParameters:
@@ -213,7 +246,6 @@ types:
         responses:
           200:
           400:
-          403:
           404:
           500:
         queryParameters:
@@ -224,7 +256,6 @@ types:
       responses:
         200:
         400:
-        403:
         404:
         500:
       queryParameters:
