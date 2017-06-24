@@ -11,14 +11,15 @@ jobs:
       - checkout
       - run: dotnet restore
       - run: dotnet build
-  unit_tests:
+  test1:
+    working_directory: /temp/test/unit
     steps:
       - run: dotnet test
 workflows:
   version: 2
-  build-unit-test:
+  build_and_test:
     jobs:
       - build
-      - unit-test:
+      - test1:
           requires:
             - build
