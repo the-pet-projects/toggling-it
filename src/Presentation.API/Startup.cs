@@ -27,6 +27,7 @@
         {
             // Add framework services.
             services.AddMvc();
+            // Register Open Generic aspnet core --> http://ardalis.com/registering-open-generics-in-aspnet-core-dependency-injection
             services.AddScoped(typeof(IQueryHandler<,>), typeof(IQueryHandler<,>));
             services.AddScoped(typeof(ICommandHandler<,>), typeof(ICommandHandler<,>));
         }
