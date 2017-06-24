@@ -11,8 +11,10 @@ jobs:
       - checkout
       - run: dotnet restore
       - run: dotnet build
-  test1:
+  unit_tests:
     working_directory: /temp/test/unit
+    docker:
+      - image: microsoft/dotnet:sdk
     steps:
       - run: dotnet test
 workflows:
@@ -20,6 +22,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test1:
+      - unit_tests:
           requires:
             - build
