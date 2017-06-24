@@ -1,4 +1,7 @@
 version: 2
+tests:
+  override:
+    - dotnet test
 jobs:
   build:
     working_directory: /temp
@@ -16,11 +19,10 @@ jobs:
     docker:
       - image: microsoft/dotnet:sdk
     steps:
-      - run: dotnet test ./Application.Core.Tests/Application.Core.Tests.csproj
-      - run: dotnet test ./Data.Commands.Tests/Data.Commands.Tests.csproj
-      - run: dotnet test ./Data.Queries.Tests/Data.Queries.Tests.csproj
-      - run: dotnet test ./Presentation.API.Tests/Presentation.API.Tests.csproj
-      - run: dotnet test ./Presentation.CommandHandler.Tests/.CommandHandler.Tests.csproj
+      - run: 
+       - type: shell 
+       - command: | 
+            circleci tests glob "**/*.csproj"
 workflows:
   version: 2
   build_and_test:
