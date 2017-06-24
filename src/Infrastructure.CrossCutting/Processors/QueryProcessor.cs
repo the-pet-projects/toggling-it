@@ -3,6 +3,7 @@
     using System;
     using System.Diagnostics;
     using Handlers;
+    using Handlers.Queries;
     using Microsoft.Extensions.DependencyInjection;
 
     public sealed class QueryProcessor : IQueryProcessor

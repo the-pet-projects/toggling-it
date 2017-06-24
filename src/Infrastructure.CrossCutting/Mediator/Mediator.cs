@@ -1,6 +1,7 @@
 ﻿namespace Infrastructure.CrossCutting.Mediator
 {
-    using Handlers;
+    using Handlers.Commands;
+    using Handlers.Queries;
 
     public class Mediator : IMediator
     {
@@ -9,7 +10,7 @@
             throw new System.NotImplementedException();
         }
 
-        public TResult Send<TResult>(ICommand<TResult> command)
+        public TResult Send<TResult>(ICommand command)
         {
             throw new System.NotImplementedException();
         }
