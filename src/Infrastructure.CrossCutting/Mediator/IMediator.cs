@@ -1,6 +1,5 @@
 ﻿namespace Infrastructure.CrossCutting.Mediator
 {
-    using Handlers;
     using Handlers.Commands;
     using Handlers.Queries;
 
