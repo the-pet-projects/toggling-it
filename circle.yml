@@ -16,7 +16,11 @@ jobs:
     docker:
       - image: microsoft/dotnet:sdk
     steps:
-      - run: dotnet test 
+      - run: dotnet test Application.Core.Tests.csproj
+      - run: dotnet test Data.Commands.Tests.csproj
+      - run: dotnet test Data.Queries.Tests.csproj
+      - run: dotnet test Presentation.API.Tests.csproj
+      - run: dotnet test Presentation.CommandHandler.Tests.csproj
 workflows:
   version: 2
   build_and_test:
