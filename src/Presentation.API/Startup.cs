@@ -1,6 +1,7 @@
 ﻿namespace Presentation.API
 {
-    using Infrastructure.CrossCutting.Handlers;
+    using Infrastructure.CrossCutting.Handlers.Commands;
+    using Infrastructure.CrossCutting.Handlers.Queries;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
@@ -26,7 +27,8 @@
         {
             // Add framework services.
             services.AddMvc();
-            
+            services.AddScoped(typeof(IQueryHandler<,>), typeof(IQueryHandler<,>));
+            services.AddScoped(typeof(ICommandHandler<,>), typeof(ICommandHandler<,>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
