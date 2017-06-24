@@ -97,6 +97,24 @@ types:
                  "errorCode": 500,
                  "message": "Internal Server Error."
                }
+    patch:
+    delete:
+  /status/{id}:
+    description: Returns the status of a toggle-groups creation.
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "status": "processing",
+                  "location": "/toggle-groups/1"
+                },
+                {
+                  "status": "completed",
+                  "location": "/toggle-groups/2"
+                }
     /toggles:
      description:
      get:
@@ -159,13 +177,25 @@ types:
   description:
   post:
     description: The location URI points to a (created) resource that will display the status of the asynchronous processing.
+    body:
+      application/json:
+        example: |
+          {
+            "name": "EnableRedButtons",
+            "active": false,
+            "group": "UI",
+            "tag":"buttons"
+          }
     responses:
       202:
+        description: Creates a new toggle resource
         body:
           application/json:
             example: |
               {
-                location: "/toggles/1"
+                "status": "pending",
+                "completion": "2017-05-01 13:00:00"
+                "tracking": "/toggles/status/1"
               }
       400:
         body:
@@ -182,6 +212,14 @@ types:
              {
                "errorCode": 422,
                "message": "The entity is invalid."
+             }
+      500:
+        body:
+         application/json:
+           example: |
+             {
+               "errorCode": 500,
+               "message": "Internal Server Error."
              }
   get:
     description: Return all toggle resources available
@@ -258,4 +296,19 @@ types:
         400:
         404:
         500:
-      queryParameters:
+  /status/{id}:
+    description: Returns the status of a toggle creation.
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "status": "processing",
+                  "location": "/toggles/1"
+                },
+                {
+                  "status": "completed",
+                  "location": "/toggles/2"
+                }
