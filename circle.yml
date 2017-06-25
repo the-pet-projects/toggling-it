@@ -11,15 +11,23 @@ jobs:
       - checkout
       - run: dotnet restore
       - run: dotnet build
-  unit_tests:
+  unit_tests_application:
     working_directory: /temp
     docker:
       - image: microsoft/dotnet:sdk
     override:
       - dotnet test
     steps:
-      - run: dotnet restore /temp/unit/
-      - run: dotnet test /temp/unit/Application.Core.Tests/Application.Core.Tests.csproj
+      - run: dotnet build /unit/Application.Core.Tests/Application.Core.Tests.csproj
+      - run: dotnet test /unit/Application.Core.Tests/Application.Core.Tests.csproj
+      - run: dotnet build /unit/Data.Commands.Tests/Data.Commands.Tests.csproj
+      - run: dotnet test /unit/Data.Commands.Tests/Data.Commands.Tests.csproj
+      - run: dotnet build /unit/Data.Queries.Tests/Data.Queries.Tests.csproj
+      - run: dotnet test /unit/Data.Queries.Tests/Data.Queries.Tests.csproj
+      - run: dotnet build /unit/Presentation.API.Tests/Presentation.API.Tests.csproj
+      - run: dotnet test /unit/Presentation.API.Tests/Presentation.API.Tests.csproj
+      - run: dotnet build /unit/Presentation.CommandHandler.Tests/Presentation.CommandHandler.Tests.csproj
+      - run: dotnet test /unit/Presentation.CommandHandler.Tests/Presentation.CommandHandler.Tests.csproj
 workflows:
   version: 2
   build_and_test:
