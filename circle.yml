@@ -12,6 +12,9 @@ jobs:
       - run: dotnet restore
       - run: dotnet build
   unit_tests:
+    working_directory: /temp
+    docker:
+      - image: microsoft/dotnet:sdk
     steps:
       - checkout
       - run: dotnet restore
