@@ -41,10 +41,10 @@ Feature-Toggle-Map is built using the following projects:
 - [Confluent Kafka](https://github.com/confluentinc/confluent-kafka-dotnet)
 - [TopShelf](https://github.com/topshelf/topshelf)
 
-##Development
+## Development
 
 Fork it
-Create your feature branch: git checkout -b my-new-feature
-Commit your changes: git commit -am 'Add some feature'
-Push to the branch: git push origin my-new-feature
-Submit a pull request!
+- Create your feature branch: git checkout -b my-new-feature
+- Commit your changes: git commit -am 'Add some feature'
+- Push to the branch: git push origin my-new-feature
+- Submit a pull request!
