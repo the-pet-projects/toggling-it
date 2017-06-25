@@ -11,29 +11,21 @@ jobs:
       - checkout
       - run: dotnet restore
       - run: dotnet build
+  unit_tests:
+    steps:
+      - checkout
+      - run: dotnet restore
+      - run: dotnet build
       - run: dotnet test test/unit/Application.Core.Tests/Application.Core.Tests.csproj
-  # unit_tests:
-    # working_directory: /temp
-    # docker:
-      # - image: microsoft/dotnet:sdk
-    # steps:
-      # - run: dotnet restore
-      # - run: dotnet build
-      # # - run: dotnet build test/unit/Application.Core.Tests/Application.Core.Tests.csproj
-      # - run: dotnet test test/unit/Application.Core.Tests/Application.Core.Tests.csproj
-      # # - run: dotnet build test/unit/Data.Commands.Tests/Data.Commands.Tests.csproj
-      # - run: dotnet test test/unit/Data.Commands.Tests/Data.Commands.Tests.csproj
-      # # - run: dotnet build test/unit/Data.Queries.Tests/Data.Queries.Tests.csproj
-      # - run: dotnet test test/unit/Data.Queries.Tests/Data.Queries.Tests.csproj
-      # # - run: dotnet build test/unit/Presentation.API.Tests/Presentation.API.Tests.csproj
-      # - run: dotnet test test/unit/Presentation.API.Tests/Presentation.API.Tests.csproj
-      # # - run: dotnet build test/unit/Presentation.CommandHandler.Tests/Presentation.CommandHandler.Tests.csproj
-      # - run: dotnet test test/unit/Presentation.CommandHandler.Tests/Presentation.CommandHandler.Tests.csproj
-# workflows:
-  # version: 2
-  # build_and_test:
-    # jobs:
-      # - build
-      # - unit_tests:
-          # requires:
-            # - build
+      - run: dotnet test test/unit/Data.Commands.Tests/Data.Commands.Tests.csproj
+      - run: dotnet test test/unit/Data.Queries.Tests/Data.Queries.Tests.csproj
+      - run: dotnet test test/unit/Presentation.API.Tests/Presentation.API.Tests.csproj
+      - run: dotnet test test/unit/Presentation.CommandHandler.Tests/Presentation.CommandHandler.Tests.csproj
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - unit_tests:
+          requires:
+            - build
