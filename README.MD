@@ -37,9 +37,9 @@ Feature-Toggle-Map is built using the following projects:
 - [Json.Net](http://james.newtonking.com/json)
 - [neo4j Community](https://neo4j.com/)
 - [Docker](https://www.docker.com/)
-- [Apache Kafka] (https://kafka.apache.org/)
-- [Confluent Kafka] (https://github.com/confluentinc/confluent-kafka-dotnet)
-- [TopShelf] (https://github.com/topshelf/topshelf)
+- [Apache Kafka](https://kafka.apache.org/)
+- [Confluent Kafka](https://github.com/confluentinc/confluent-kafka-dotnet)
+- [TopShelf](https://github.com/topshelf/topshelf)
 
 ##Development
 
