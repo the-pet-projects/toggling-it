@@ -18,7 +18,7 @@ jobs:
     override:
       - dotnet test
     steps:
-      - run: dotnet restore
+      - run: dotnet restore /temp/unit/
       - run: dotnet test /temp/unit/Application.Core.Tests/Application.Core.Tests.csproj
 workflows:
   version: 2
