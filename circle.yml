@@ -16,9 +16,9 @@ jobs:
     working_directory: /temp
     docker:
       - image: microsoft/dotnet:sdk
-    override:
-      - dotnet test
     steps:
+      - run: dotnet restore
+      - run: dotnet build
       # - run: dotnet build test/unit/Application.Core.Tests/Application.Core.Tests.csproj
       - run: dotnet test test/unit/Application.Core.Tests/Application.Core.Tests.csproj
       # - run: dotnet build test/unit/Data.Commands.Tests/Data.Commands.Tests.csproj
