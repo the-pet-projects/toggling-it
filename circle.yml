@@ -11,6 +11,7 @@ jobs:
       - checkout
       - run: dotnet restore
       - run: dotnet build
+      # - run: dotnet test test/unit
   unit_tests:
     working_directory: /temp
     docker:
@@ -28,11 +29,11 @@ jobs:
       - run: dotnet test test/unit/Presentation.API.Tests/Presentation.API.Tests.csproj
       # - run: dotnet build test/unit/Presentation.CommandHandler.Tests/Presentation.CommandHandler.Tests.csproj
       - run: dotnet test test/unit/Presentation.CommandHandler.Tests/Presentation.CommandHandler.Tests.csproj
-# workflows:
-  # version: 2
-  # build_and_test:
-    # jobs:
-      # - build
-      # - unit_tests:
-          # requires:
-            # - build
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - unit_tests:
+          requires:
+            - build
