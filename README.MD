@@ -15,9 +15,9 @@ You need to setup the Neo4j Community Database and Kafka connections. This can b
 
 ```
       "Neo4j": {
-    "username": "user1",
-    "password": "pass1",
-    "boltEndpoint": "http://localhost:7476/"
+		"username": "user1",
+		"password": "pass1",
+		"boltEndpoint": "http://localhost:7476/"
 	}
 ```
 
