@@ -13,21 +13,29 @@ It also let's you check which applications are using a toggle and let's you anal
 You need to setup the Neo4j Community Database and Kafka connections. This can be done on the appsettings.json file.
  - For the database edit the connection string. 
 
+ - To configure the Kafka connection edit the following json object in appsettings
+ 
 ```
-      "Neo4j": {
+	
+	{
+	  "Logging": {
+		"IncludeScopes": false,
+		"LogLevel": {
+		  "Default": "Warning"
+		}
+	  },
+	  "Neo4j": {
 		"username": "user1",
 		"password": "pass1",
 		"boltEndpoint": "http://localhost:7476/"
+	  },
+	  "Kafka": {
+		"Endpoint": "http://localhost:9092"
+	  } 
 	}
-```
-
- - To configure the Kafka connection edit the following json object in appsettings:
 
 ```
-  "Kafka": {
-    "Endpoint": "http://localhost:9092" 
-  } 
-```
+
 
 ## Credits
 
