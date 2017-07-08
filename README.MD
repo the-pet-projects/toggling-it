@@ -8,6 +8,11 @@ Feature Toggle Map with Neo4j
 FTM is an application that let's you create toggles for your applications based on toggle-groups, tags and whatever you desire.
 It also let's you check which applications are using a toggle and let's you analyze the impact when you turn a toggle on ot off.
 
+## Graph Initial Design
+
+![Grapg](https://github.com/pedromsmoreira/feature-toggle-map/blob/graph-base/img/Initial%20Graph.JPG)
+
+
 ## Getting Started
 
 You need to setup the Neo4j Community Database and Kafka connections. This can be done on the appsettings.json file.
