@@ -14,7 +14,7 @@ It also let's you check which applications are using a toggle and let's you anal
 
 ## Graph Initial Design
 
-![Grapg](https://github.com/pedromsmoreira/feature-toggle-map/blob/graph-base/img/Initial%20Graph.JPG)
+![Graph](https://github.com/pedromsmoreira/feature-toggle-map/blob/master/img/InitialGraph.JPG)
 
 
 ## Getting Started
