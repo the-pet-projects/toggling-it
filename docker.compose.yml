@@ -10,7 +10,7 @@ services:
       args:
         source: ./build
     ports:
-      - "65455:80"        
+      - "65455:65455"        
   # neo4j:
     # image: neo4j
     # restart: unless-stopped
