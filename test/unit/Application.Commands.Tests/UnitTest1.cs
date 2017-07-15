@@ -1,8 +1,7 @@
-using System;
-using Xunit;
-
-namespace Application.Core.Tests
+namespace Application.Commands.Tests
 {
+    using Xunit;
+
     public class UnitTest1
     {
         [Fact]

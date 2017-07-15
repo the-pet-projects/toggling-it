@@ -19,7 +19,8 @@ jobs:
       - checkout
       - run: dotnet restore
       - run: dotnet build
-      - run: dotnet test test/unit/Application.Core.Tests/Application.Core.Tests.csproj
+      - run: dotnet test test/unit/Application.Commands.Tests/Application.Commands.Tests.csproj
+      - run: dotnet test test/unit/Application.Queries.Tests/Application.Queries.Tests.csproj
       - run: dotnet test test/unit/Data.Commands.Tests/Data.Commands.Tests.csproj
       - run: dotnet test test/unit/Data.Queries.Tests/Data.Queries.Tests.csproj
       - run: dotnet test test/unit/Presentation.API.Tests/Presentation.API.Tests.csproj
