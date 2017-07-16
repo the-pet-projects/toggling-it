@@ -1,6 +1,6 @@
 FROM microsoft/aspnetcore:1.1
-ENTRYPOINT ["dotnet", "Presentation.API.dll"]
-ARG source=.
+ARG source
 WORKDIR /app
-EXPOSE 65455
-COPY $source .
+EXPOSE 80
+COPY ${source:-obj/Docker/publish} .
+ENTRYPOINT ["dotnet", "Presentation.API.dll"]

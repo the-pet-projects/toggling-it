@@ -35,13 +35,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Commands.Tests", "test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Queries.Tests", "test\unit\Data.Queries.Tests\Data.Queries.Tests.csproj", "{2102DCB6-A98E-456E-B0CA-8C34CF878B70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Queries", "src\Application.Queries\Application.Queries.csproj", "{F84A8272-FBAE-4DA0-8D04-8CB3C43FDED5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Queries", "src\Application.Queries\Application.Queries.csproj", "{F84A8272-FBAE-4DA0-8D04-8CB3C43FDED5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Commands", "src\Application.Commands\Application.Commands.csproj", "{8A8D9AEE-AC9E-401B-BD1A-9708DFBA7F2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Commands", "src\Application.Commands\Application.Commands.csproj", "{8A8D9AEE-AC9E-401B-BD1A-9708DFBA7F2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Queries.Tests", "test\unit\Application.Queries.Tests\Application.Queries.Tests.csproj", "{34B35351-DB9C-45D3-BAFC-7ACDA96127A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Queries.Tests", "test\unit\Application.Queries.Tests\Application.Queries.Tests.csproj", "{34B35351-DB9C-45D3-BAFC-7ACDA96127A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Commands.Tests", "test\unit\Application.Commands.Tests\Application.Commands.Tests.csproj", "{2ECE5CF7-C64F-4952-82C9-B28D4F00127C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Commands.Tests", "test\unit\Application.Commands.Tests\Application.Commands.Tests.csproj", "{2ECE5CF7-C64F-4952-82C9-B28D4F00127C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

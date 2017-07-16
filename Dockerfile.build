@@ -1,0 +1,19 @@
+FROM microsoft/aspnetcore-build AS build-env
+WORKDIR /feature-toggle-map
+
+COPY /src/* ./
+RUN echo ls -l
+COPY /test/* ./
+COPY /FeatureToggleApi.sln ./
+WORKDIR ./build
+RUN ["dotnet", "restore"]
+# RUN dotnet restore ./test
+
+COPY . .
+RUN dotnet publish --output /out/ -c Release
+
+# command to build the image
+# docker build -f Dockerfile.build -t ftm-test-build .
+
+# command to create the image
+# docker create --name ftm-test-build-container ftm-test-build
