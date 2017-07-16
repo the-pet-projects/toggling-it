@@ -1,0 +1,24 @@
+FROM microsoft/aspnetcore-build
+
+COPY . /app
+WORKDIR /app
+
+RUN ["dotnet", "restore"]
+RUN ["dotnet", "build"]
+
+RUN dotnet publish --output /out/ -c Release
+
+# 1 - command to build the image
+# docker build -f Dockerfile -t ftm-build .
+
+# 2 - command to create the image
+# docker create --name ftm-build-container ftm-build
+
+# 3 - copy the container compiled result
+# docker cp ftm-build-container:/out ./publish
+
+# 4 - build the runtime image
+# docker build -t ftm .
+
+# 5 - run image
+# docker run --name ftm -p 8181:80 ftm

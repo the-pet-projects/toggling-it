@@ -1,12 +1,4 @@
-FROM microsoft/dotnet:1.1.1-sdk
-
-COPY . /app
+FROM microsoft/aspnetcore
 WORKDIR /app
-
-RUN ["dotnet", "restore"]
-RUN ["dotnet", "build"]
-
-EXPOSE 5000/tcp
-ENV ASPNETCORE_URLS http://*:5000
-
-RUN dotnet run --project src/Presentation.API/Presentation.API.csproj
+COPY ./publish .
+ENTRYPOINT ["dotnet", "Presentation.API.dll"]
