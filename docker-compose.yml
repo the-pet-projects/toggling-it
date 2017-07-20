@@ -2,10 +2,10 @@ version: '2'
 
 services:  
   webui:
-    image: ftm-1.0.0    
-    container_name: ftm
+    image: ftm    
+    container_name: ftm-test
     build:
-      context: ./src/webui
+      context: ./src/Presentation.API
       dockerfile: Dockerfile2
       args:
         source: ./build
