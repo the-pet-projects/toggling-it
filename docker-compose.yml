@@ -1,0 +1,13 @@
+version: '2'
+
+services:  
+  webui:
+    image: ftm-1.0.0    
+    container_name: ftm
+    build:
+      context: ./src/webui
+      dockerfile: Dockerfile2
+      args:
+        source: ./build
+    ports:
+      - "5000:80"
