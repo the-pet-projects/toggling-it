@@ -1,1 +1,1 @@
-docker-compose -f .\docker.compose.yml -p ftm build
+docker-compose -f .\docker-compose.yml -p ftm build

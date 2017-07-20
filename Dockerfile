@@ -1,13 +1,17 @@
-FROM microsoft/aspnetcore:1.1 AS aspnetcore
+# FROM microsoft/aspnetcore:1.1
+# ARG source
+# WORKDIR /app
+# EXPOSE 80
+# COPY ${source:-obj/Docker/build} .
+# ENTRYPOINT ["dotnet", "Presentation.API.dll"]
+
+FROM microsoft/aspnetcore:1.1
 ARG source
 RUN echo "source: $source"
 
 WORKDIR /app
 
 COPY ${source:-/build} .
-EXPOSE 65455
+EXPOSE 80
 
 ENTRYPOINT ["dotnet", "Presentation.API.dll"]
-
-# run image
-# docker run --name ftm-test -p 8181:80 ftm-test 
