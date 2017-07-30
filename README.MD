@@ -15,11 +15,11 @@ It also let's you check which applications are using a toggle and let's you anal
 
 ## Graph Schema
 
-![Schema](https://github.com/pedromsmoreira/feature-toggle-map/blob/master/img/GraphSchema.JPG)
+![Schema](https://github.com/the-pet-projects/toggling-it/blob/master/docs/img/GraphSchema.JPG)
 
 ## Graph Initial Design
 
-![Graph](https://github.com/pedromsmoreira/feature-toggle-map/blob/master/img/InitialGraph.JPG)
+![Graph](https://github.com/the-pet-projects/toggling-it/blob/master/docs/img/InitialGraph.JPG)
 
 
 ## Getting Started
@@ -53,7 +53,7 @@ You need to setup the Neo4j Community Database and Kafka connections. This can b
 
 ## Credits
 
-Feature-Toggle-Map is built using the following projects:
+Toggling-It is built using the following projects:
 
 - [ASP.NET Core](https://github.com/aspnet/Home)
 - [Json.Net](http://james.newtonking.com/json)
