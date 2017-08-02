@@ -7,4 +7,4 @@ services:
     volumes:
      - .:/src
     working_dir: /src
-    command: /bin/bash -c "dotnet restore ./FeatureToggleApi.sln && dotnet publish ./FeatureToggleApi.sln -c Release -o ./build"
+    command: /bin/bash -c "dotnet restore FeatureToggleApi.sln && dotnet publish FeatureToggleApi.sln -c Release -o build"

@@ -1,4 +1,5 @@
-[![CircleCI](https://circleci.com/gh/pedromsmoreira/feature-toggle-map/tree/master.svg?style=svg&circle-token=5dc31e02b7463a26dad858e031a207a2967d5983)](https://circleci.com/gh/pedromsmoreira/feature-toggle-map/tree/master)
+## # Build [![Build Status](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/buildStatus/icon?job=TogglingItAPI-Stage1-Build&style=plastic)](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/view/Toggling-It/view/Toggling-It%20API%20Pipeline/job/TogglingItAPI-Stage1-Build/) # Unit Tests [![Build Status](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/buildStatus/icon?job=TogglingItAPI-Stage1-UnitTests&style=plastic)](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/view/Toggling-It/view/Toggling-It%20API%20Pipeline/job/TogglingItAPI-Stage1-UnitTests/) # Integration Tests [![Build Status](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/buildStatus/icon?job=TogglingItAPI-Stage2-IntegrationTests&style=plastic&label=healthinesses)](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/view/Toggling-It/view/Toggling-It%20API%20Pipeline/job/TogglingItAPI-Stage2-IntegrationTests/)
+
 
 # feature-toggle-map
 Feature Toggle Map with Neo4j
@@ -10,11 +11,11 @@ It also let's you check which applications are using a toggle and let's you anal
 
 ## Graph Schema
 
-![Schema](https://github.com/pedromsmoreira/feature-toggle-map/blob/master/img/GraphSchema.JPG)
+![Schema](https://github.com/the-pet-projects/toggling-it/blob/master/docs/img/GraphSchema.JPG)
 
 ## Graph Initial Design
 
-![Graph](https://github.com/pedromsmoreira/feature-toggle-map/blob/master/img/InitialGraph.JPG)
+![Graph](https://github.com/the-pet-projects/toggling-it/blob/master/docs/img/InitialGraph.JPG)
 
 
 ## Getting Started
@@ -48,7 +49,7 @@ You need to setup the Neo4j Community Database and Kafka connections. This can b
 
 ## Credits
 
-Feature-Toggle-Map is built using the following projects:
+Toggling-It is built using the following projects:
 
 - [ASP.NET Core](https://github.com/aspnet/Home)
 - [Json.Net](http://james.newtonking.com/json)
