@@ -17,6 +17,7 @@
                 .Build();
 
             host.Run();
+			var test = "test";
         }
     }
 }
