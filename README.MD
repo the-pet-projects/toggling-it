@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 [![CircleCI](https://circleci.com/gh/pedromsmoreira/feature-toggle-map/tree/master.svg?style=svg&circle-token=5dc31e02b7463a26dad858e031a207a2967d5983)](https://circleci.com/gh/pedromsmoreira/feature-toggle-map/tree/master)
+=======
+## # Build [![Build Status](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/buildStatus/icon?job=TogglingItAPI-Stage1-Build&style=plastic)](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/view/Toggling-It/view/Toggling-It%20API%20Pipeline/job/TogglingItAPI-Stage1-Build/) # Unit Tests [![Build Status](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/buildStatus/icon?job=TogglingItAPI-Stage1-UnitTests&style=plastic)](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/view/Toggling-It/view/Toggling-It%20API%20Pipeline/job/TogglingItAPI-Stage1-UnitTests/) # Integration Tests [![Build Status](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/buildStatus/icon?job=TogglingItAPI-Stage2-IntegrationTests&style=plastic&label=healthinesses)](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/view/Toggling-It/view/Toggling-It%20API%20Pipeline/job/TogglingItAPI-Stage2-IntegrationTests/)
+
+>>>>>>> 694324a... added CD pipeline scripts and docker compose files
 
 # feature-toggle-map
 Feature Toggle Map with Neo4j

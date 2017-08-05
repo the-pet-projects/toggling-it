@@ -3,7 +3,7 @@ version: '2'
 services:
   ftm:
     container_name: ftm
-    image: ftm
+    image: petprojects/toggling-it:dev
     build:
       context: ./src/Presentation.API
       dockerfile: Dockerfile
