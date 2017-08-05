@@ -18,6 +18,7 @@
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             this.Configuration = builder.Build();
+			var str = "test";
         }
 
         public IConfigurationRoot Configuration { get; }
