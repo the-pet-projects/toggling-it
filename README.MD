@@ -1,13 +1,15 @@
 ## # Build [![Build Status](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/buildStatus/icon?job=TogglingItAPI-Stage1-Build&style=plastic)](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/view/Toggling-It/view/Toggling-It%20API%20Pipeline/job/TogglingItAPI-Stage1-Build/) # Unit Tests [![Build Status](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/buildStatus/icon?job=TogglingItAPI-Stage1-UnitTests&style=plastic)](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/view/Toggling-It/view/Toggling-It%20API%20Pipeline/job/TogglingItAPI-Stage1-UnitTests/) # Integration Tests [![Build Status](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/buildStatus/icon?job=TogglingItAPI-Stage2-IntegrationTests&style=plastic&label=healthinesses)](http://dev01-petproject.westeurope.cloudapp.azure.com:8080/view/Toggling-It/view/Toggling-It%20API%20Pipeline/job/TogglingItAPI-Stage2-IntegrationTests/)
 
+[![CodeFactor](https://www.codefactor.io/repository/github/the-pet-projects/toggling-it/badge)](https://www.codefactor.io/repository/github/the-pet-projects/toggling-it)
 
-# feature-toggle-map
-Feature Toggle Map with Neo4j
+
+# toggling-it
+Feature Toggle
 
 ## Overview
 
-FTM is an application that let's you create toggles for your applications based on toggle-groups, tags and whatever you desire.
-It also let's you check which applications are using a toggle and let's you analyze the impact when you turn a toggle on ot off.
+toggling-it is an application that let's you create toggles for your applications based on toggle-groups, tags and whatever you desire.
+It also let's you check which applications are using a toggle and let's you analyze the impact when you turn a toggle on or off.
 
 ## Graph Schema
 
