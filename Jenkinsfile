@@ -13,21 +13,21 @@ node {
 				checkout scm			
 				
 				try {
-					sh './deploy/scripts/build.ci.sh'
+					sh '''sh ./deploy/scripts/build.ci.sh;'''
 					step([$class: 'MSTestPublisher', failOnError: true, keepLongStdio: true])
 				}
 				finally {
-					sh './deploy/scripts/build.ci.cleanup.sh'
+					sh '''sh ./deploy/scripts/build.ci.cleanup.sh;'''
 				}
 			}
 
 			stage('Unit Tests'){
 				try {
-					sh './deploy/scripts/build.ci.unittests.sh'
+					sh '''sh ./deploy/scripts/build.ci.unittests.sh;'''
 					step([$class: 'MSTestPublisher', failOnError: true, keepLongStdio: true])
 				}
 				finally {
-					sh './deploy/scripts/build.ci.unittests.cleanup.sh'		
+					sh '''sh ./deploy/scripts/build.ci.unittests.cleanup.sh;'''		
 				}
 			}
 
