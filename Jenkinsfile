@@ -14,7 +14,6 @@ node {
 				
 				try {
 					sh '''sh ./deploy/scripts/build.ci.sh;'''
-					step([$class: 'MSTestPublisher', failOnError: true, keepLongStdio: true])
 				}
 				finally {
 					sh '''sh ./deploy/scripts/build.ci.cleanup.sh;'''
