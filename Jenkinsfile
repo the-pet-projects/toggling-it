@@ -9,6 +9,7 @@ node {
     try {
 		timestamps {
 			stage('Build'){
+				currentBuild.displayName = ${PIPELINE_VERSION}
 				deleteDir()
 				checkout scm			
 				
