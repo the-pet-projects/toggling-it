@@ -1,7 +1,10 @@
 failureCode=0
-for line in $(find -name '*.csproj' | grep -G '^.\/test\/unit\/.*\.csproj'); 
+for line in $(find -name '*.sln' | grep -G '^.*\.sln'); 
 do 
 	dotnet restore $line;
+done;
+for line in $(find -name '*.csproj' | grep -G '^.\/test\/unit\/.*\.csproj'); 
+do 
 	dotnet test --logger trx -c "Release" $line;
 	lastExitCode=$?;
     	echo "lastexitcode=$lastExitCode";
