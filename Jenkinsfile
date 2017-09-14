@@ -24,7 +24,7 @@ node {
 			stage('Unit Tests'){
 				try {
 					sh '''sh ./deploy/scripts/build.ci.unittests.sh;'''
-					step([$class: 'MSTestPublisher', failOnError: true, keepLongStdio: true])
+					step([$class: 'XUnitPublisher', testTimeMargin: '3000', thresholdMode: 1, thresholds: [[$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: ''], [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']], tools: [[$class: 'MSTestJunitHudsonTestType', deleteOutputFiles: true, failIfNotNew: true, pattern: '**/test/unit/**/*.trx', skipNoTestFiles: false, stopProcessingIfError: true]]])
 				}
 				finally {
 					sh '''sh ./deploy/scripts/build.ci.unittests.cleanup.sh;'''		
@@ -51,7 +51,7 @@ node {
 						sh '''git tag -f ${PIPELINE_VERSION};
 							git push origin ${PIPELINE_VERSION};'''
 							
-						step([$class: 'MSTestPublisher', failOnError: true, keepLongStdio: true])
+						step([$class: 'XUnitPublisher', testTimeMargin: '3000', thresholdMode: 1, thresholds: [[$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: ''], [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']], tools: [[$class: 'MSTestJunitHudsonTestType', deleteOutputFiles: true, failIfNotNew: true, pattern: '**/test/integration/**/*.trx', skipNoTestFiles: false, stopProcessingIfError: true]]])
 					}
 				}			
 			}
