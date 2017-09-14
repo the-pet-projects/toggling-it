@@ -22,7 +22,7 @@ node {
 				stage('Unit Tests'){
 					try {
 						sh '''sh ./deploy/scripts/build.ci.unittests.sh;'''
-						step([$class: 'XUnitBuilder', testTimeMargin: '3000', thresholdMode: 0, thresholds: [[$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: ''], [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']], tools: [[$class: 'MSTestJunitHudsonTestType', deleteOutputFiles: true, failIfNotNew: true, pattern: '**/test/unit/**/*.trx', skipNoTestFiles: true, stopProcessingIfError: true], [$class: 'XUnitDotNetTestType', deleteOutputFiles: true, failIfNotNew: true, pattern: '**/test/unit/**/*.trx', skipNoTestFiles: true, stopProcessingIfError: true]]])
+						step([$class: 'MSTestPublisher', testResultsFile: '**/test/unit/**/*.trx', failOnError: true, keepLongStdio: true])
 
 					}
 					finally {
@@ -48,10 +48,9 @@ node {
 								exit $exitCode;'''
 							
 							sh '''git tag -f ${PIPELINE_VERSION};
-								git push origin ${PIPELINE_VERSION};'''
-								
-							step([$class: 'XUnitBuilder', testTimeMargin: '3000', thresholdMode: 0, thresholds: [[$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: ''], [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']], tools: [[$class: 'MSTestJunitHudsonTestType', deleteOutputFiles: true, failIfNotNew: true, pattern: '**/test/integration/**/*.trx', skipNoTestFiles: true, stopProcessingIfError: true], [$class: 'XUnitDotNetTestType', deleteOutputFiles: true, failIfNotNew: true, pattern: '**/test/integration/**/*.trx', skipNoTestFiles: true, stopProcessingIfError: true]]])
-
+								git push origin ${PIPELINE_VERSION};'''								
+							
+							step([$class: 'MSTestPublisher', testResultsFile: '**/test/integration/**/*.trx', failOnError: true, keepLongStdio: true])
 						}
 					}			
 				}
