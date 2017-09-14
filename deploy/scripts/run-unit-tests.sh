@@ -1,5 +1,5 @@
 failureCode=0
-for line in $(find -name '*.sln' | grep -G '^.*\.sln'); 
+for line in $(find -name '*.sln' -maxdepth 1 | grep -G '^.*\.sln'); 
 do 
     echo "restoring $line";
 	dotnet restore $line;
