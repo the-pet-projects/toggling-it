@@ -7,11 +7,7 @@ node {
 		withEnv(['PIPELINE_VERSION='+version]) {
 			timestamps {
 				stage('Build'){
-					def cenas = VersionNumber(versionNumberString: '0.0.0.${BUILD_DATE_FORMATTED,\"yy\"}${BUILD_MONTH, XX}.${BUILDS_THIS_MONTH}')
-					echo cenas
-					echo env.PIPELINE_VERSION
-					echo version
-					currentBuild.displayName = cenas
+					currentBuild.displayName = '#'+env.PIPELINE_VERSION
 					deleteDir()
 					checkout scm			
 					
