@@ -1,0 +1,4 @@
+jenkinsPipeline {
+	imageName = 'toggling-it'
+	
+}
