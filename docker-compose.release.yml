@@ -4,6 +4,7 @@ services:
   ftm:
     container_name: ftm
     image: petprojects/toggling-it:${BUILD_VERSION}
+    network_mode: bridge
     build:
       context: ./src/Presentation.API
       dockerfile: Dockerfile
