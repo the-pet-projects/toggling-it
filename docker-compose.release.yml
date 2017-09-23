@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  ftm:
+    container_name: ftm
+    image: petprojects/toggling-it:${BUILD_VERSION}
+    build:
+      context: ./src/Presentation.API
+      dockerfile: Dockerfile
+      args:
+        source: ${OUTPUT_PATH}
