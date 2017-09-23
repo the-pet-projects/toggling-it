@@ -1,20 +1,9 @@
 version: '2'
 
 services:
-  ftm-build:
-    image: microsoft/aspnetcore-build:1.0-1.1
-    container_name: ftm-build
-    volumes:
-     - .:/src
-    working_dir: /src
-    command: /bin/bash -c "dotnet restore FeatureToggleApi.sln && dotnet publish FeatureToggleApi.sln -c Debug -o build"
   ftm:
     container_name: ftm
     image: ftm
-    depends_on:
-     - ftm-build
     build:
-      context: ./src/Presentation.API
-      dockerfile: Dockerfile
-      args:
-        source: ./build
+      context: .
+      dockerfile: Dockerfile.build
