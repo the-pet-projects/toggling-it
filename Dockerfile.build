@@ -1,24 +1,18 @@
-FROM microsoft/aspnetcore-build
+FROM microsoft/aspnetcore-build:1.1
 
-COPY . /app
+COPY . ./app
 WORKDIR /app
 
 RUN ["dotnet", "restore"]
 RUN ["dotnet", "build"]
 
-RUN dotnet publish --output /out/ -c Release
+RUN dotnet publish -c Debug -o build
 
-# 1 - command to build the image
-# docker build -f Dockerfile -t ftm-build .
+FROM microsoft/aspnetcore:1.1
 
-# 2 - command to create the image
-# docker create --name ftm-build-container ftm-build
+WORKDIR /app
 
-# 3 - copy the container compiled result
-# docker cp ftm-build-container:/out ./publish
+COPY ./src/Presentation.API/build .
+EXPOSE 80
 
-# 4 - build the runtime image
-# docker build -t ftm .
-
-# 5 - run image
-# docker run --name ftm -p 8181:80 ftm
+ENTRYPOINT ["dotnet", "Presentation.API.dll"]
